@@ -13,18 +13,18 @@ def consultar(dir_ip):
 
 def main():
     st.title("Consultar IP reservada")
-    direccion_ip=st.text_input('Ingrese la direccion IP a consultar')
+    direccion_ip=st.text_input('Ingrese la dirección IP a consultar')
     if direccion_ip:
         match = re.match(pattern, direccion_ip)
         if match:
             ip_result = consultar(direccion_ip)
             if ip_result.empty:
-                st.info(f'La dirección IP: {direccion_ip} no esta reservada', icon="ℹ️")
+                st.info(f'La dirección IP: {direccion_ip} no está reservada.', icon="ℹ️")
             else:
-                st.success(f'La dirección IP: {direccion_ip} tiene una reserva activa', icon="✅" )
+                st.success(f'La dirección IP: {direccion_ip} tiene una reserva activa.', icon="✅" )
                 st.dataframe(ip_result)
         else:
-            st.error(f'{direccion_ip} no es una direccion IP valida', icon="🚨")
+            st.error(f'{direccion_ip} no es una dirección IP válida', icon="🚨")
 
 
 
