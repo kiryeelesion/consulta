@@ -33,7 +33,7 @@ def main():
         match = re.match(pattern, direccion_ip)
         if match:
             if not ip_en_scope(direccion_ip):
-                st.error(f'La dirección IP: {direccion_ip} no es posible reservar, no pertenece al alcance.', icon="🚨")
+                st.error(f'No es posible realizar la reserva de la dirección IP: {direccion_ip}, no pertenece al alcance.', icon="🚨")
             else:
                 ip_result = consultar(direccion_ip)
                 if ip_result.empty:
